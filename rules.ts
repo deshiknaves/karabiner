@@ -1,15 +1,16 @@
 import fs from 'fs'
+import { convertKeysToSnakeCase } from './transformers'
 import { KarabinerRules, KarabinerSimpleModifications } from './types'
 import { app, createHyperSubLayers, open } from './utils'
 
 const simpleModifications: KarabinerSimpleModifications[] = [
   {
     from: {
-      key_code: 'right_command',
+      keyCode: 'right_command',
     },
     to: [
       {
-        key_code: 'escape',
+        keyCode: 'escape',
       },
     ],
   },
@@ -23,30 +24,30 @@ const rules: KarabinerRules[] = [
       {
         description: 'Caps Lock -> Hyper Key',
         from: {
-          key_code: 'caps_lock',
+          keyCode: 'caps_lock',
           modifiers: {
             optional: ['any'],
           },
         },
         to: [
           {
-            set_variable: {
+            setVariable: {
               name: 'hyper',
               value: 1,
             },
           },
         ],
-        to_after_key_up: [
+        toAfterKeyUp: [
           {
-            set_variable: {
+            setVariable: {
               name: 'hyper',
               value: 0,
             },
           },
         ],
-        to_if_alone: [
+        toIfAlone: [
           {
-            key_code: 'escape',
+            keyCode: 'escape',
           },
         ],
         type: 'basic',
@@ -77,35 +78,35 @@ const rules: KarabinerRules[] = [
       u: {
         to: [
           {
-            key_code: 'volume_increment',
+            keyCode: 'volume_increment',
           },
         ],
       },
       j: {
         to: [
           {
-            key_code: 'volume_decrement',
+            keyCode: 'volume_decrement',
           },
         ],
       },
       i: {
         to: [
           {
-            key_code: 'display_brightness_increment',
+            keyCode: 'display_brightness_increment',
           },
         ],
       },
       k: {
         to: [
           {
-            key_code: 'display_brightness_decrement',
+            keyCode: 'display_brightness_decrement',
           },
         ],
       },
       l: {
         to: [
           {
-            key_code: 'q',
+            keyCode: 'q',
             modifiers: ['right_control', 'right_command'],
           },
         ],
@@ -113,14 +114,14 @@ const rules: KarabinerRules[] = [
       p: {
         to: [
           {
-            key_code: 'play_or_pause',
+            keyCode: 'play_or_pause',
           },
         ],
       },
       semicolon: {
         to: [
           {
-            key_code: 'fastforward',
+            keyCode: 'fastforward',
           },
         ],
       },
@@ -128,7 +129,7 @@ const rules: KarabinerRules[] = [
         to: [
           {
             // Emoji picker
-            key_code: 'spacebar',
+            keyCode: 'spacebar',
             modifiers: ['right_control', 'right_command'],
           },
         ],
@@ -141,46 +142,46 @@ const rules: KarabinerRules[] = [
     // so that hjkl work like they do in vim
     v: {
       h: {
-        to: [{ key_code: 'left_arrow' }],
+        to: [{ keyCode: 'left_arrow' }],
       },
       j: {
-        to: [{ key_code: 'down_arrow' }],
+        to: [{ keyCode: 'down_arrow' }],
       },
       k: {
-        to: [{ key_code: 'up_arrow' }],
+        to: [{ keyCode: 'up_arrow' }],
       },
       l: {
-        to: [{ key_code: 'right_arrow' }],
+        to: [{ keyCode: 'right_arrow' }],
       },
       // Magicmove via homerow.app
       m: {
-        to: [{ key_code: 'f', modifiers: ['right_control'] }],
+        to: [{ keyCode: 'f', modifiers: ['right_control'] }],
       },
       // Scroll mode via homerow.app
       s: {
-        to: [{ key_code: 'j', modifiers: ['right_control'] }],
+        to: [{ keyCode: 'j', modifiers: ['right_control'] }],
       },
       d: {
-        to: [{ key_code: 'd', modifiers: ['right_shift', 'right_command'] }],
+        to: [{ keyCode: 'd', modifiers: ['right_shift', 'right_command'] }],
       },
       u: {
-        to: [{ key_code: 'page_down' }],
+        to: [{ keyCode: 'page_down' }],
       },
       i: {
-        to: [{ key_code: 'page_up' }],
+        to: [{ keyCode: 'page_up' }],
       },
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
     c: {
       p: {
-        to: [{ key_code: 'play_or_pause' }],
+        to: [{ keyCode: 'play_or_pause' }],
       },
       n: {
-        to: [{ key_code: 'fastforward' }],
+        to: [{ keyCode: 'fastforward' }],
       },
       b: {
-        to: [{ key_code: 'rewind' }],
+        to: [{ keyCode: 'rewind' }],
       },
     },
 
@@ -201,7 +202,7 @@ const rules: KarabinerRules[] = [
 fs.writeFileSync(
   'karabiner.json',
   JSON.stringify(
-    {
+    convertKeysToSnakeCase({
       global: {
         show_in_menu_bar: false,
       },
@@ -214,7 +215,7 @@ fs.writeFileSync(
           },
         },
       ],
-    },
+    }),
     null,
     2
   )

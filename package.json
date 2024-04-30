@@ -11,7 +11,13 @@
     "tsm": "^2.2.2"
   },
   "scripts": {
-    "build": "tsm rules.ts",
-    "watch": "nodemon --exec yarn build -e ts"
+    "build": "tsx rules.ts",
+    "dev": "tsx --watch rules.ts"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.17.0",
+    "lodash": "^4.17.21",
+    "tsx": "^4.7.3",
+    "type-fest": "^4.18.0"
   }
 }

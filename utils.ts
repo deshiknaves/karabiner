@@ -1,17 +1,17 @@
-import { To, KeyCode, Manipulator, KarabinerRules } from "./types";
+import { KarabinerRules, KeyCode, Manipulator, To } from './types'
 
 /**
  * Custom way to describe a command in a layer
  */
 export interface LayerCommand {
-  to: To[];
-  description?: string;
+  to: To[]
+  description?: string
 }
 
 type HyperKeySublayer = {
   // The ? is necessary, otherwise we'd have to define something for _every_ key code
-  [key_code in KeyCode]?: LayerCommand;
-};
+  [keyCode in KeyCode]?: LayerCommand
+}
 
 /**
  * Create a Hyper Key sublayer, where every command is prefixed with a key
@@ -23,22 +23,22 @@ export function createHyperSubLayer(
   commands: HyperKeySublayer,
   allSubLayerVariables: string[]
 ): Manipulator[] {
-  const subLayerVariableName = generateSubLayerVariableName(sublayer_key);
+  const subLayerVariableName = generateSubLayerVariableName(sublayer_key)
 
   return [
     // When Hyper + sublayer_key is pressed, set the variable to 1; on key_up, set it to 0 again
     {
       description: `Toggle Hyper sublayer ${sublayer_key}`,
-      type: "basic",
+      type: 'basic',
       from: {
-        key_code: sublayer_key,
+        keyCode: sublayer_key,
         modifiers: {
-          optional: ["any"],
+          optional: ['any'],
         },
       },
-      to_after_key_up: [
+      toAfterKeyUp: [
         {
-          set_variable: {
+          setVariable: {
             name: subLayerVariableName,
             // The default value of a variable is 0: https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/conditions/variable/
             // That means by using 0 and 1 we can filter for "0" in the conditions below and it'll work on startup
@@ -48,7 +48,7 @@ export function createHyperSubLayer(
       ],
       to: [
         {
-          set_variable: {
+          setVariable: {
             name: subLayerVariableName,
             value: 1,
           },
@@ -63,13 +63,13 @@ export function createHyperSubLayer(
             (subLayerVariable) => subLayerVariable !== subLayerVariableName
           )
           .map((subLayerVariable) => ({
-            type: "variable_if" as const,
+            type: 'variable_if' as const,
             name: subLayerVariable,
             value: 0,
           })),
         {
-          type: "variable_if",
-          name: "hyper",
+          type: 'variable_if',
+          name: 'hyper',
           value: 1,
         },
       ],
@@ -78,24 +78,24 @@ export function createHyperSubLayer(
     ...(Object.keys(commands) as (keyof typeof commands)[]).map(
       (command_key): Manipulator => ({
         ...commands[command_key],
-        type: "basic" as const,
+        type: 'basic' as const,
         from: {
-          key_code: command_key,
+          keyCode: command_key,
           modifiers: {
-            optional: ["any"],
+            optional: ['any'],
           },
         },
         // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
         conditions: [
           {
-            type: "variable_if",
+            type: 'variable_if',
             name: subLayerVariableName,
             value: 1,
           },
         ],
       })
     ),
-  ];
+  ]
 }
 
 /**
@@ -104,38 +104,37 @@ export function createHyperSubLayer(
  * activates at a time
  */
 export function createHyperSubLayers(subLayers: {
-  [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
+  [keyCode in KeyCode]?: HyperKeySublayer | LayerCommand
 }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
-  ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
+  ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key))
 
   return Object.entries(subLayers).map(([key, value]) =>
-    "to" in value
+    'to' in value
       ? {
           description: `Hyper Key + ${key}`,
           manipulators: [
             {
               ...value,
-              type: "basic" as const,
+              type: 'basic' as const,
               from: {
-                key_code: key as KeyCode,
+                keyCode: key as KeyCode,
                 modifiers: {
-                  optional: ["any"],
+                  optional: ['any'],
                 },
               },
               conditions: [
                 {
-                  type: "variable_if",
-                  name: "hyper",
+                  type: 'variable_if',
+                  name: 'hyper',
                   value: 1,
                 },
-                ...allSubLayerVariables
-                  .map((subLayerVariable) => ({
-                    type: "variable_if" as const,
-                    name: subLayerVariable,
-                    value: 0,
-                  })),
+                ...allSubLayerVariables.map((subLayerVariable) => ({
+                  type: 'variable_if' as const,
+                  name: subLayerVariable,
+                  value: 0,
+                })),
               ],
             },
           ],
@@ -148,11 +147,11 @@ export function createHyperSubLayers(subLayers: {
             allSubLayerVariables
           ),
         }
-  );
+  )
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
-  return `hyper_sublayer_${key}`;
+  return `hyper_sublayer_${key}`
 }
 
 /**
@@ -162,11 +161,11 @@ export function open(what: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open ${what}`,
+        shellCommand: `open ${what}`,
       },
     ],
     description: `Open ${what}`,
-  };
+  }
 }
 
 /**
@@ -176,16 +175,16 @@ export function rectangle(name: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open -g rectangle://execute-action?name=${name}`,
+        shellCommand: `open -g rectangle://execute-action?name=${name}`,
       },
     ],
     description: `Window: ${name}`,
-  };
+  }
 }
 
 /**
  * Shortcut for "Open an app" command (of which there are a bunch)
  */
 export function app(name: string): LayerCommand {
-  return open(`-a '${name}.app'`);
+  return open(`-a '${name}.app'`)
 }
