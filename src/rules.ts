@@ -65,6 +65,7 @@ const rules: KarabinerRules[] = [
       d: app('Discord'),
       g: app('Tower'),
       n: app('Notion'),
+      m: app('Messages'),
       s: app('Slack'),
       t: app('Terminal'),
       v: app('Visual Studio Code'),

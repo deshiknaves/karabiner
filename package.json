@@ -10,7 +10,8 @@
   },
   "scripts": {
     "build": "tsx src/rules.ts",
-    "dev": "tsx --watch src/rules.ts"
+    "dev": "tsx --watch src/rules.ts",
+    "restart": "./restart.sh"
   },
   "dependencies": {
     "@types/lodash": "^4.17.0",
