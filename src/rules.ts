@@ -36,6 +36,10 @@ const rules: KarabinerRules[] = [
               value: 1,
             },
           },
+          {
+            keyCode: 'left_shift',
+            modifiers: ['left_command', 'left_control'],
+          },
         ],
         toAfterKeyUp: [
           {
