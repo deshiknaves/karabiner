@@ -260,30 +260,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
-                  }
-                ],
-                "description": "Open -a 'Visual Studio Code.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open -a 'Discord.app'"
                   }
                 ],
@@ -308,13 +284,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Slack.app'"
+                    "shell_command": "open -a 'Tower.app'"
                   }
                 ],
-                "description": "Open -a 'Slack.app'",
+                "description": "Open -a 'Tower.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "s",
+                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -356,6 +332,30 @@
               {
                 "to": [
                   {
+                    "shell_command": "open -a 'Slack.app'"
+                  }
+                ],
+                "description": "Open -a 'Slack.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Terminal.app'"
                   }
                 ],
@@ -380,13 +380,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
-                "description": "Open notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026",
+                "description": "Open -a 'Visual Studio Code.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
+                  "key_code": "v",
                   "modifiers": {
                     "optional": [
                       "any"

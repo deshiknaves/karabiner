@@ -62,15 +62,12 @@ const rules: KarabinerRules[] = [
       1: app('1Password'),
       a: app('Arc'),
       c: app('Notion Calendar'),
-      v: app('Visual Studio Code'),
       d: app('Discord'),
-      s: app('Slack'),
+      g: app('Tower'),
       n: app('Notion'),
+      s: app('Slack'),
       t: app('Terminal'),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        'notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026'
-      ),
+      v: app('Visual Studio Code'),
       w: app('Warp'),
     },
 
