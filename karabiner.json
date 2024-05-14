@@ -1221,37 +1221,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://script-commands/dismiss-notifications"
+                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
                   }
                 ],
-                "description": "Open raycast://script-commands/dismiss-notifications",
+                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1293,13 +1269,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/raycast/confetti",
+                "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
                 "type": "basic",
                 "from": {
-                  "key_code": "p",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1317,13 +1293,85 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
+                    "shell_command": "open raycast://extensions/raycast/system/lock-screen"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
+                "description": "Open raycast://extensions/raycast/system/lock-screen",
                 "type": "basic",
                 "from": {
-                  "key_code": "a",
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_r",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://script-commands/dismiss-notifications"
+                  }
+                ],
+                "description": "Open raycast://script-commands/dismiss-notifications",
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_r",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/raycast/calendar/my-schedule"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/calendar/my-schedule",
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_r",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast/confetti",
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
                   "modifiers": {
                     "optional": [
                       "any"
