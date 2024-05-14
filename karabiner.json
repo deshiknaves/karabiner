@@ -243,10 +243,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Notion Calendar.app'"
+                    "shell_command": "open -a 'Google Chrome.app'"
                   }
                 ],
-                "description": "Open -a 'Notion Calendar.app'",
+                "description": "Open -a 'Google Chrome.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -274,6 +274,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Firefox Developer Edition.app'"
+                  }
+                ],
+                "description": "Open -a 'Firefox Developer Edition.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
                   "modifiers": {
                     "optional": [
                       "any"

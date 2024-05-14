@@ -65,8 +65,9 @@ const rules: KarabinerRules[] = [
     o: {
       1: app('1Password'),
       a: app('Arc'),
-      c: app('Notion Calendar'),
+      c: app('Google Chrome'),
       d: app('Discord'),
+      f: app('Firefox Developer Edition'),
       g: app('Tower'),
       n: app('Notion'),
       m: app('Messages'),
@@ -191,7 +192,9 @@ const rules: KarabinerRules[] = [
     r: {
       a: open('raycast://extensions/raycast/raycast-ai/ai-chat'),
       c: open('raycast://extensions/raycast/system/open-camera'),
-      e: open('raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'),
+      e: open(
+        'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'
+      ),
       l: open('raycast://extensions/raycast/system/lock-screen'),
       n: open('raycast://script-commands/dismiss-notifications'),
       m: open('raycast://extensions/raycast/calendar/my-schedule'),
