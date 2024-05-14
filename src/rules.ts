@@ -189,13 +189,13 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
-      n: open('raycast://script-commands/dismiss-notifications'),
-      e: open(
-        'raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'
-      ),
-      c: open('raycast://extensions/raycast/system/open-camera'),
-      p: open('raycast://extensions/raycast/raycast/confetti'),
       a: open('raycast://extensions/raycast/raycast-ai/ai-chat'),
+      c: open('raycast://extensions/raycast/system/open-camera'),
+      e: open('raycast://extensions/raycast/emoji-symbols/search-emoji-symbols'),
+      l: open('raycast://extensions/raycast/system/lock-screen'),
+      n: open('raycast://script-commands/dismiss-notifications'),
+      m: open('raycast://extensions/raycast/calendar/my-schedule'),
+      p: open('raycast://extensions/raycast/raycast/confetti'),
       s: open('raycast://extensions/peduarte/silent-mention/index'),
     },
   }),
