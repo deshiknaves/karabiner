@@ -69,6 +69,7 @@ const rules: KarabinerRules[] = [
       d: app('Discord'),
       f: app('Firefox Developer Edition'),
       g: app('Tower'),
+      l: app('Linear'),
       n: app('Notion'),
       m: app('Messages'),
       s: app('Slack'),
