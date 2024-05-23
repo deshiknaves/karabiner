@@ -65,6 +65,7 @@ const rules: KarabinerRules[] = [
     o: {
       1: app('1Password'),
       a: app('Arc'),
+      b: app('Obsidian'),
       c: app('Google Chrome'),
       d: app('Discord'),
       f: app('Firefox Developer Edition'),
