@@ -74,7 +74,7 @@ const rules: KarabinerRules[] = [
       n: app('Notion'),
       m: app('Messages'),
       s: app('Slack'),
-      t: app('Terminal'),
+      t: app('Outlook'),
       v: app('Visual Studio Code'),
       w: app('Warp'),
     },
