@@ -68,6 +68,7 @@ const rules: KarabinerRules[] = [
       b: app('Obsidian'),
       c: app('Google Chrome'),
       d: app('Discord'),
+      e: app('Microsoft Edge'),
       f: app('Firefox Developer Edition'),
       g: app('Tower'),
       l: app('Linear'),
