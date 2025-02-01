@@ -19,15 +19,28 @@ const simpleModifications: KarabinerSimpleModifications[] = [
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
   {
-    description: 'Hyper Key (⌃⌥⇧⌘)',
+    description: 'Caps Lock to Ctrl',
     manipulators: [
       {
-        description: 'Caps Lock -> Hyper Key',
+        description: 'Caps Lock -> Ctrl',
         from: {
           keyCode: 'caps_lock',
-          modifiers: {
-            optional: ['any'],
-          },
+          modifiers: { optional: ['any'] },
+        },
+        to: [{ keyCode: 'left_control' }],
+        toIfAlone: [{ keyCode: 'escape' }],
+        type: 'basic',
+      },
+    ],
+  },
+  {
+    description: 'Semicolon Hyper Key (⌃⌥⇧⌘)',
+    manipulators: [
+      {
+        description: 'Semicolon -> Hyper Key',
+        from: {
+          keyCode: 'semicolon',
+          modifiers: { optional: ['any'] },
         },
         to: [
           {
@@ -49,11 +62,7 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        toIfAlone: [
-          {
-            keyCode: 'escape',
-          },
-        ],
+        toIfAlone: [{ keyCode: 'semicolon' }],
         type: 'basic',
       },
     ],
@@ -70,7 +79,7 @@ const rules: KarabinerRules[] = [
       e: app('Microsoft Edge'),
       f: app('Firefox Developer Edition'),
       g: app('Tower'),
-      l: app('Outlook'),
+      l: app('Mail'),
       n: app('Notion'),
       m: app('Messages'),
       s: app('Slack'),
