@@ -85,6 +85,7 @@ const rules: KarabinerRules[] = [
       s: app('Slack'),
       t: app('Linear'),
       w: app('Warp'),
+      z: app('Zed'),
     },
 
     s: {
