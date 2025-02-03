@@ -28,6 +28,7 @@
                                     "key_code": "semicolon",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "parameters": { "basic_to_if_held_down_threshold_milliseconds": 250 },
                                 "to": [
                                     {
                                         "set_variable": {

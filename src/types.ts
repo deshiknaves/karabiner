@@ -21,6 +21,7 @@ export type Manipulator = {
 
 export type Parameters = {
   'basic.simultaneous_threshold_milliseconds'?: number
+  'basic.to_if_held_down_threshold_milliseconds'?: number
 }
 
 type Conditions =

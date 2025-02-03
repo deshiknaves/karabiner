@@ -42,6 +42,9 @@ const rules: KarabinerRules[] = [
           keyCode: 'semicolon',
           modifiers: { optional: ['any'] },
         },
+        parameters: {
+          'basic.to_if_held_down_threshold_milliseconds': 250,
+        },
         to: [
           {
             setVariable: {
