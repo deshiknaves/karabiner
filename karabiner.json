@@ -20,15 +20,15 @@
                         ]
                     },
                     {
-                        "description": "Semicolon Hyper Key (⌃⌥⇧⌘)",
+                        "description": "Tab Hyper Key (⌃⌥⇧⌘)",
                         "manipulators": [
                             {
-                                "description": "Semicolon -> Hyper Key",
+                                "description": "Tab -> Hyper Key",
                                 "from": {
-                                    "key_code": "semicolon",
+                                    "key_code": "tab",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic_to_if_held_down_threshold_milliseconds": 250 },
+                                "parameters": { "basic_to_if_held_down_threshold_milliseconds": 200 },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -49,7 +49,7 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "semicolon" }],
+                                "to_if_alone": [{ "key_code": "tab" }],
                                 "type": "basic"
                             }
                         ]
@@ -1115,6 +1115,17 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 591,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false
+                }
+            ],
             "name": "Default",
             "simple_modifications": [
                 {

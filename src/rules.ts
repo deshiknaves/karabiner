@@ -34,12 +34,12 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: 'Semicolon Hyper Key (⌃⌥⇧⌘)',
+    description: 'Tab Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
       {
-        description: 'Semicolon -> Hyper Key',
+        description: 'Tab -> Hyper Key',
         from: {
-          keyCode: 'semicolon',
+          keyCode: 'tab',
           modifiers: { optional: ['any'] },
         },
         parameters: {
@@ -65,7 +65,7 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        toIfAlone: [{ keyCode: 'semicolon' }],
+        toIfAlone: [{ keyCode: 'tab' }],
         type: 'basic',
       },
     ],
