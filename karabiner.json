@@ -20,15 +20,15 @@
                         ]
                     },
                     {
-                        "description": "Tab Hyper Key (⌃⌥⇧⌘)",
+                        "description": "Quote Hyper Key (⌃⌥⇧⌘)",
                         "manipulators": [
                             {
-                                "description": "Tab -> Hyper Key",
+                                "description": "Quote -> Hyper Key",
                                 "from": {
-                                    "key_code": "tab",
+                                    "key_code": "quote",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic_to_if_held_down_threshold_milliseconds": 200 },
+                                "parameters": { "basic_to_if_held_down_threshold_milliseconds": 100 },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -49,7 +49,7 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_alone": [{ "key_code": "quote" }],
                                 "type": "basic"
                             }
                         ]
@@ -1115,17 +1115,6 @@
                     }
                 ]
             },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 591,
-                        "vendor_id": 1452
-                    },
-                    "ignore": false
-                }
-            ],
             "name": "Default",
             "simple_modifications": [
                 {

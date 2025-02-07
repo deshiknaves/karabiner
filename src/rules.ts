@@ -34,16 +34,16 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: 'Tab Hyper Key (⌃⌥⇧⌘)',
+    description: 'Quote Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
       {
-        description: 'Tab -> Hyper Key',
+        description: 'Quote -> Hyper Key',
         from: {
-          keyCode: 'tab',
+          keyCode: 'quote',
           modifiers: { optional: ['any'] },
         },
         parameters: {
-          'basic.to_if_held_down_threshold_milliseconds': 250,
+          'basic.to_if_held_down_threshold_milliseconds': 100,
         },
         to: [
           {
@@ -65,7 +65,7 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        toIfAlone: [{ keyCode: 'tab' }],
+        toIfAlone: [{ keyCode: 'quote' }],
         type: 'basic',
       },
     ],
