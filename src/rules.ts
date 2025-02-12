@@ -34,12 +34,12 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: 'Quote Hyper Key (⌃⌥⇧⌘)',
+    description: 'Slash Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
       {
-        description: 'Quote -> Hyper Key',
+        description: 'Slash -> Hyper Key',
         from: {
-          keyCode: 'quote',
+          keyCode: 'slash',
           modifiers: { optional: ['any'] },
         },
         parameters: {
@@ -65,7 +65,7 @@ const rules: KarabinerRules[] = [
             },
           },
         ],
-        toIfAlone: [{ keyCode: 'quote' }],
+        toIfAlone: [{ keyCode: 'slash' }],
         type: 'basic',
       },
     ],
