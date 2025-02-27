@@ -66,6 +66,41 @@ const rules: KarabinerRules[] = [
           },
         ],
         toIfAlone: [{ keyCode: 'slash' }],
+        conditions: [
+          {
+            name: 'shift_held',
+            type: 'variable_if',
+            value: 0,
+          },
+        ],
+        type: 'basic',
+      },
+      {
+        description: 'Track shift held',
+        from: {
+          keyCode: 'right_shift',
+          modifiers: { optional: ['any'] },
+        },
+        to: [
+          {
+            setVariable: {
+              name: 'shift_held',
+              value: 1,
+            },
+          },
+          {
+            keyCode: 'right_shift',
+            modifiers: ['any'],
+          },
+        ],
+        toAfterKeyUp: [
+          {
+            setVariable: {
+              name: 'shift_held',
+              value: 0,
+            },
+          },
+        ],
         type: 'basic',
       },
     ],
