@@ -23,6 +23,13 @@
                         "description": "Slash Hyper Key (⌃⌥⇧⌘)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "name": "shift_held",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
                                 "description": "Slash -> Hyper Key",
                                 "from": {
                                     "key_code": "slash",
@@ -50,6 +57,34 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "slash" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Track shift held",
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "shift_held",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "right_shift",
+                                        "modifiers": ["any"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "shift_held",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -214,12 +249,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Visual Studio Code.app'",
+                                "description": "Open -a 'Cursor.app'",
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
+                                "to": [{ "shell_command": "open -a 'Cursor.app'" }],
                                 "type": "basic"
                             },
                             {

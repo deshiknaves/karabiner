@@ -112,7 +112,7 @@ const rules: KarabinerRules[] = [
     o: {
       1: app('1Password'),
       b: app('Arc'),
-      c: app('Visual Studio Code'),
+      c: app('Cursor'),
       d: app('Obsidian'),
       e: app('Microsoft Edge'),
       f: app('Firefox Developer Edition'),
