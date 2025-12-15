@@ -111,7 +111,7 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       1: app('1Password'),
-      b: app('Arc'),
+      b: app('Safari'),
       c: app('Cursor'),
       d: app('Obsidian'),
       e: app('Microsoft Edge'),
